@@ -1,0 +1,15 @@
+Download: 
+	wget https://sb....... -O file.mp3(file.wav)
+Audio to PCM: 
+	ffmpeg -i [file.mp3(file.wav)] -f s16be(s16le) -ar [sample_rate] -ac [channel_num] -acodec pcm_s16le [file.pcm]
+Record:
+	ffmpeg -f alsa -sample_rate (default:48000) -channels (default:2) -i hw:0 record.wav  
+Play:(with sox installed)
+	play [file.mp3(file.wav)]
+	play -t raw -r [sample_rate] -e signed -b [bits(default:16)] -c [channel_num] [file.pcm]
+Use:
+	./the_file_with_chmod_x [file.pcm] [de_file.pcm]
+
+ 
+
+ 
